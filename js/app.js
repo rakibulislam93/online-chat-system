@@ -4,7 +4,7 @@ let currentReceiver = null;
 
 // ====== Load users dynamically ======
 const loadAllUsers = () => {
-  fetch("http://127.0.0.1:8000/accounts/users/")
+  fetch("https://online-chat-backend-o6op.onrender.com/accounts/users/")
     .then(res => res.json())
     .then(data => {
       const parentDiv = document.getElementById("userLists");   // sidebar
@@ -44,7 +44,7 @@ function openChat(user) {
   const myUsername = localStorage.getItem("myUsername")
   const myUserId = localStorage.getItem('myUserId')
 
-  fetch(`http://127.0.0.1:8000/chat/${myUserId}/${user.id}/messages/`)
+  fetch(`https://online-chat-backend-o6op.onrender.com/chat/${myUserId}/${user.id}/messages/`)
   .then(res=>res.json())
   .then(data=>{
     console.log(data)
@@ -58,7 +58,7 @@ function openChat(user) {
   if (socket) socket.close();
 
   // Connect WebSocket
-  socket = new WebSocket(`ws://127.0.0.1:8000/ws/chat/${user.id}/?token=${token}`);
+  socket = new WebSocket(`wss://online-chat-backend-o6op.onrender.com/ws/chat/${user.id}/?token=${token}`);
 
   socket.onopen = () => {
     console.log("Connected to WebSocket for", user.username);
