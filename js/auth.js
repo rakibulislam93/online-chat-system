@@ -5,7 +5,7 @@ const UserLogin=(event)=>{
     password = document.getElementById("password").value
     console.log(username)
     console.log(password)
-    fetch("http://127.0.0.1:8000/accounts/login/",{
+    fetch("https://online-chat-backend-o6op.onrender.com/accounts/login/",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         body : JSON.stringify({username:username,password:password})
@@ -24,6 +24,10 @@ const UserLogin=(event)=>{
             alert(data.error)
         }
         else{alert("INTERNAL_ERROR")}
+    })
+    .catch(err=>{
+        alert("Nework error login faild : ",err)
+
     })
 }
 
