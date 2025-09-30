@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body class="h-screen flex flex-col bg-gray-900">
 
     <!-- top part  -->
     <div class="w-full bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 p-5">
@@ -42,7 +42,7 @@
 
     </div>
 
-    <main class="bg-gray-900 text-white min-h-screen">
+    <main class="bg-gray-900 text-white flex-1 overflow-y-auto">
 
         <div id="messageDiv" class="max-w-3xl mx-auto pb-28 px-4 py-4">
             
@@ -52,7 +52,7 @@
 
 
     <!-- footer part  -->
-    <footer class="fixed bottom-0 left-0 w-full bg-gray-800 shadow-lg">
+    <footer class="bg-gray-800 shadow-lg">
         <div class="max-w-3xl mx-auto flex items-end gap-2 p-3 text-white">
             <!-- Message Input -->
             <textarea id="messageBox" class="flex-1 resize-none border px-4 py-2 bg-gray-900 
