@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <!-- top part  -->
+    <div class="w-full bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 p-5">
+
+        <div class="flex justify-evenly text-white">
+
+            <div id="leftside_profileName" class="flex gap-5">
+
+                <!-- <div><img class="rounded-full w-12" src="https://i.pravatar.cc/150?u=2" alt=""></div>
+                <div>
+                    <h6 class="font-semibold text-lg">Rakibul Islam</h6>
+                    <small>Online</small>
+                </div> -->
+
+            </div>
+
+            <div class="flex gap-10 items-center text-white">
+                <button><i class="fa-solid fa-phone text-xl"></i></button>
+                <button><i class="fa-solid fa-video text-xl "></i></button>
+                <button><i class="fa-solid fa-ellipsis-v"></i></button>
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <main class="bg-gray-900 text-white min-h-screen">
+
+        <div id="messageDiv" class="max-w-3xl mx-auto pb-28 px-4 py-4">
+            
+        </div>
+
+    </main>
+
+
+    <!-- footer part  -->
+    <footer class="fixed bottom-0 left-0 w-full bg-gray-800 shadow-lg">
+        <div class="max-w-3xl mx-auto flex items-end gap-2 p-3 text-white">
+            <!-- Message Input -->
+            <textarea id="messageBox" class="flex-1 resize-none border px-4 py-2 bg-gray-900 
+             focus:outline-none focus:ring-2 focus:ring-gray-800 overflow-hidden rounded-full" rows="1"
+                placeholder="Type a message..."></textarea>
+
+            <!-- Send Button -->
+            <button id="msgSentBtn" onclick="getChatInputValue()" type="submit" class="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-2xl flex-shrink-0 transition">
+                <i class="fa-regular fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+    </footer>
+
+    
+
+
+
+
+    <script src="/js/input_box.js"></script>
+    <script src="/js/home.js"></script>
+    <script src="/js/chat.js"></script>
+
+</body>
+
+</html>

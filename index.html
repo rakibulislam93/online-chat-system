@@ -5,64 +5,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat App</title>
-  <script src="./js/app.js"></script>
+  
   <script src="./js/auth.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
 
-  <nav id="nav_container" class="bg-blue-600 p-5">
-    <ul class="px-4 flex justify-between text-white items-center">
-      <div class="text-2xl font-bold">Chat App</div>
-      <div id="nav_links" class="flex gap-10 text-lg font-semibold"></div>
-    </ul>
+  <nav id="nav_container" class="bg-gradient-to-r from-red-400 via-pink-500 to-purple-500 p-5 text-md">
+    <ul class="px-4 flex justify-between sm:justify-evenly text-white items-center">
+
+      <!-- left Dropdown Trigger  -->
+      <div class="relative">
+
+        <button id="menuBtn">
+          <i class="fa-solid fa-list text-lg"></i>
+        </button>
+        <!-- Dropdown Menu  -->
+        <div id="dropdownMenu" class="absolute left-0 mt-2 w-32 bg-white text-black rounded-lg shadow-lg hidden">
+          
+          <!-- <a href="#logout" class="block px-4 py-2 hover:bg-gray-200">Logout</a> -->
+        </div>
+
+      </div>
+
+
+
+      <div class="text-lg font-bold ">Messages</div>
+      <div>
+        <input type="text" class="px-2 focus:outline-none text-black py-1 rounded-full w-36 sm:w-64" placeholder="Search">
+        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      
   </nav>
 
-  <div class="flex h-screen bg-gray-100">
-    <!-- Left Sidebar -->
-    <div class="w-28 md:w-60 bg-white shadow-lg p-3 space-y-6">
-      <h2 class="hidden md:block text-xl font-bold mb-4">Online</h2>
-      <div id="userLists" class="space-y-4">
+  <main class="px-6 py-6 mb-16 min-h-screen   bg-gray-900">
 
-      </div>
+    <div id="userList" class="container mx-auto">
+
+      <!-- load all users dynamically -->
+      
     </div>
+    
+  </main>
 
-    <!-- Main Chat Area -->
-    <div class="flex-1 flex flex-col">
-      <!-- Top bar -->
-      <div class="bg-gray-200 p-3 overflow-x-auto">
-        <div id="topUserList" class="flex gap-6">
-          <div class="flex flex-col items-center">
-            <img src="https://i.pravatar.cc/150?img=1" class="w-12 h-12 rounded-full">
-            <small>Rakib</small>
-          </div>
-          <div class="flex flex-col items-center">
-            <img src="https://i.pravatar.cc/150?img=2" class="w-12 h-12 rounded-full">
-            <small>Arif</small>
-          </div>
-          <div class="flex flex-col items-center">
-            <img src="https://i.pravatar.cc/150?img=3" class="w-12 h-12 rounded-full">
-            <small>Sakib</small>
-          </div>
-        </div>
-      </div>
-
-
-      <div id="chatWindow" class="hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-            w-11/12 max-w-md h-[500px] bg-white shadow-lg rounded-lg flex flex-col">
-
-
-
-      </div>
-
-
+  <footer class="fixed w-full bottom-0 left-0">
+    <div class="w-full flex justify-evenly items-center text-2xl text-white p-5 
+              bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+      <a href=""><i class="fa-regular fa-house"></i></a>
+      <a href=""><i class="fa-regular fa-heart"></i></a>
+      <a href=""><i class="fa-regular fa-message"></i></a>
+      <a href=""><i class="fa-regular fa-user"></i></a>
 
     </div>
 
-  </div>
+  </footer>
+
 
   <script src="./js/nav.js"></script>
+  <script src="/js/home.js"></script>
 </body>
 
 </html>

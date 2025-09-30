@@ -1,23 +1,32 @@
 
-const navLinks = document.getElementById("nav_links");
+// Dropdown menu handle 
+const menuBtn = document.getElementById('menuBtn')
+const dropdownMenu = document.getElementById('dropdownMenu')
+menuBtn.addEventListener("click",()=>{
+  dropdownMenu.classList.toggle('hidden')
+})
+// dropdown sara baire click korleo hidden hobe..
 
-  function renderNavbar() {
-    const token = localStorage.getItem("access_token");
-    navLinks.innerHTML = "";
+window.addEventListener("click", (e)=>{
+  if(!menuBtn.contains(e.target) && !dropdownMenu.contains(e.target)){
 
-    if (token) {
-      // User logged in
-      navLinks.innerHTML = `
-        <li><a href="profile.html">Profile</a></li>
-        <li><button onclick="UserLogOut(event)">Logout</button></li>
-      `;
-    } else {
-      // User not logged in
-      navLinks.innerHTML = `
-        <li><a href="./pages/login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
-      `;
-    }
+    dropdownMenu.classList.add('hidden')
   }
+})
 
-  renderNavbar();
+
+const access_token = localStorage.getItem("access_token")
+const myUsername = localStorage.getItem("myUsername")
+const myUserId = localStorage.getItem('myUserId')
+
+if(access_token && myUserId){
+  dropdownMenu.innerHTML=`
+  <a onclick="UserLogOut(event)" class="block cursor-pointer px-4 py-2 hover:bg-gray-200">Logout</a>
+  `
+}
+else{
+  dropdownMenu.innerHTML=`
+  <a href="/pages/login.html" class="block px-4 py-2 hover:bg-gray-200">Login</a>
+  <a href="#register" class="block px-4 py-2 hover:bg-gray-200">Register</a>
+  `
+}
