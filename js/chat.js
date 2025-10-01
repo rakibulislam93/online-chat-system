@@ -2,8 +2,17 @@
 const params = new URLSearchParams(window.location.search);
 const user_id = params.get("user_id")
 const username = params.get("username")
+const messageDiv = document.getElementById("messageDiv");
+const messageBox = document.getElementById("messageBox");
 
 let socket = null
+
+function scrollToBottom() {
+    messageDiv.scrollTo({
+        top: messageDiv.scrollHeight,
+        behavior: 'smooth'
+    });
+}
 
 if(user_id && username){
 
@@ -33,17 +42,13 @@ if(user_id && username){
     
       if(data.sender===myUsername) return
 
-      const messageDiv = document.getElementById("messageDiv");
+      
       const serverDiv = document.createElement("div")
       serverDiv.className="flex justify-start pb-4"
       serverDiv.innerHTML = `<div class="bg-gray-700 text-white px-4 py-2 rounded-2xl max-w-xs break-words">${data.message}</div>`;
   
       messageDiv.appendChild(serverDiv);
-      // messageDiv.scrollTop = messageDiv.scrollHeight
-      messageDiv.scrollTo({
-        top: messageDiv.scrollHeight,
-        behavior: 'smooth'
-      });
+      scrollToBottom() // smoth scroll
       
   }
 
@@ -65,11 +70,7 @@ const getChatInputValue = () => {
   userDiv.className = "flex justify-end pb-4";
   userDiv.innerHTML = `<div class="bg-purple-600 text-white px-4 py-2 rounded-2xl max-w-xs break-words">${msg}</div>`;
   messageDiv.appendChild(userDiv);
-  // messageDiv.scrollTop=messageDiv.scrollHeight
-  messageDiv.scrollTo({
-    top: messageDiv.scrollHeight,
-    behavior: 'smooth'
-  });
+  scrollToBottom() // smoth scroll
 
 
 //   sent message 
@@ -83,3 +84,7 @@ const getChatInputValue = () => {
 
   messageBox.value = "";
 };
+
+messageBox.addEventListener('focus', () => {
+    setTimeout(scrollToBottom, 300); // wait for keyboard animation
+});
