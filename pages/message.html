@@ -39,9 +39,9 @@
 
     </div>
 
-    <main class="bg-gray-900 pt-20 pb-24 text-white flex-1 overflow-y-auto scrollbar-hide">
+    <main class="bg-gray-900 pt-20 pb-24 text-white flex-1 ">
 
-        <div id="messageDiv" class="max-w-3xl mx-auto pb-28 px-4 py-4">
+        <div id="messageDiv" class="max-w-3xl  mx-auto pb-28 px-4 py-4 overflow-y-auto h-[calc(100vh-96px)] scrollbar-hide">
             
         </div>
 
@@ -49,7 +49,7 @@
 
 
     <!-- footer part  -->
-    <footer class="sticky bottom-0 inset-x-0 z-50 bg-gray-800 shadow-lg">
+    <footer id="chatFooter" class="fixed bottom-0 inset-x-0 z-50 bg-gray-800 shadow-lg">
         <div class="max-w-3xl mx-auto flex items-end gap-2 p-6 text-white">
             <!-- Message Input -->
             <textarea id="messageBox" class="flex-1 resize-none border px-4 py-2 bg-gray-900 

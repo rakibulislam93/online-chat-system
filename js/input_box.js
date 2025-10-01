@@ -25,6 +25,10 @@ textarea.addEventListener("input", () => {
   }
 });
 
+
+
+
+
 // user can sent value using enter button
 // textarea.addEventListener("keydown", (e) => {
 //   if (e.key === "Enter" && !e.shiftKey) {

@@ -19,7 +19,7 @@ if(user_id && username){
   const token = localStorage.getItem("access_token")
   
   
-  if(socket) socket.console();
+  if(socket) socket.close()
 
   socket = new WebSocket(`wss://online-chat-backend-o6op.onrender.com/ws/chat/${user_id}/?token=${token}`)
   
@@ -40,6 +40,7 @@ if(user_id && username){
   
       messageDiv.appendChild(serverDiv);
       messageDiv.scrollTop = messageDiv.scrollHeight
+      
   }
 
   socket.onclose = () => {
@@ -61,6 +62,7 @@ const getChatInputValue = () => {
   userDiv.innerHTML = `<div class="bg-purple-600 text-white px-4 py-2 rounded-2xl max-w-xs break-words">${msg}</div>`;
   messageDiv.appendChild(userDiv);
   messageDiv.scrollTop=messageDiv.scrollHeight
+
 
 //   sent message 
   if(socket && socket.readyState===WebSocket.OPEN){
