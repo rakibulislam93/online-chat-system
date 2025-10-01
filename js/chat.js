@@ -39,7 +39,11 @@ if(user_id && username){
       serverDiv.innerHTML = `<div class="bg-gray-700 text-white px-4 py-2 rounded-2xl max-w-xs break-words">${data.message}</div>`;
   
       messageDiv.appendChild(serverDiv);
-      messageDiv.scrollTop = messageDiv.scrollHeight
+      // messageDiv.scrollTop = messageDiv.scrollHeight
+      messageDiv.scrollTo({
+        top: messageDiv.scrollHeight,
+        behavior: 'smooth'
+      });
       
   }
 
@@ -61,7 +65,11 @@ const getChatInputValue = () => {
   userDiv.className = "flex justify-end pb-4";
   userDiv.innerHTML = `<div class="bg-purple-600 text-white px-4 py-2 rounded-2xl max-w-xs break-words">${msg}</div>`;
   messageDiv.appendChild(userDiv);
-  messageDiv.scrollTop=messageDiv.scrollHeight
+  // messageDiv.scrollTop=messageDiv.scrollHeight
+  messageDiv.scrollTo({
+    top: messageDiv.scrollHeight,
+    behavior: 'smooth'
+  });
 
 
 //   sent message 
