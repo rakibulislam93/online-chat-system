@@ -18,7 +18,7 @@
 <body class="min-h-screen flex flex-col bg-gray-900">
 
     <!-- top part  -->
-    <div class="w-full bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 p-5">
+    <div class="fixed top-0 inset-x-0 z-50  bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 p-5">
 
         <div class="flex justify-evenly text-white">
 
@@ -39,7 +39,7 @@
 
     </div>
 
-    <main class="bg-gray-900 text-white flex-1 overflow-y-auto scrollbar-hide">
+    <main class="bg-gray-900 pt-20 pb-24 text-white flex-1 overflow-y-auto scrollbar-hide">
 
         <div id="messageDiv" class="max-w-3xl mx-auto pb-28 px-4 py-4">
             
@@ -49,15 +49,15 @@
 
 
     <!-- footer part  -->
-    <footer class="bg-gray-800 shadow-lg">
+    <footer class="fixed bottom-0 inset-x-0 z-50 bg-gray-800 shadow-lg">
         <div class="max-w-3xl mx-auto flex items-end gap-2 p-3 text-white">
             <!-- Message Input -->
             <textarea id="messageBox" class="flex-1 resize-none border px-4 py-2 bg-gray-900 
-             focus:outline-none focus:ring-2 focus:ring-gray-800 overflow-hidden rounded-full" rows="1"
+             focus:outline-none focus:ring-2 focus:ring-purple-800 text-sm overflow-hidden rounded-full" rows="1"
                 placeholder="Type a message..."></textarea>
 
             <!-- Send Button -->
-            <button id="msgSentBtn" onclick="getChatInputValue()" type="submit" class="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-2xl flex-shrink-0 transition">
+            <button id="msgSentBtn" onclick="getChatInputValue()" type="submit" class="bg-purple-600 hover:bg-purple-700 text-white p-3 rounded-full flex-shrink-0 transition">
                 <i class="fa-regular fa-paper-plane"></i>
             </button>
 
