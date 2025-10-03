@@ -30,7 +30,7 @@ if(user_id && username){
   
   if(socket) socket.close()
 
-  socket = new WebSocket(`wss://online-chat-backend-o6op.onrender.com/ws/chat/${user_id}/?token=${token}`)
+  socket = new WebSocket(`wss://online-chat-backend-gdpd.onrender.com/ws/chat/${user_id}/?token=${token}`)
   
   socket.onopen=()=>{
       console.log("Websocket conected...")

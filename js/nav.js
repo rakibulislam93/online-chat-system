@@ -27,6 +27,6 @@ if(access_token && myUserId){
 else{
   dropdownMenu.innerHTML=`
   <a href="/pages/login.html" class="block px-4 py-2 hover:bg-gray-200">Login</a>
-  <a href="#register" class="block px-4 py-2 hover:bg-gray-200">Register</a>
+  <a href="/pages/register.html" class="block px-4 py-2 hover:bg-gray-200">Register</a>
   `
 }
